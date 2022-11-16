@@ -1,0 +1,32 @@
+@import 'antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+header {
+  padding: 1em;
+  position: fixed;
+  width: 100vw;
+  border-bottom: 1px solid white;
+}
+
+.App-header {
+  background-color: rgb(45, 44, 44);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(75, 74, 74);
+}
+
+.App-link {
+  color: white;
+}
+
+.fab {
+  position: absolute;
+  bottom: 24px;
+}
