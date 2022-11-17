@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "antd";
 import UploadModal from "./UploadModal";
+import Post from "./Post"
 
 export default function Feed() {
   const [photoList, setPhotoList] = useState();
@@ -13,7 +14,12 @@ export default function Feed() {
   }, [setPhotoList]);
   return (
     <section>
-      {!photoList ? <p>Loading...</p> : <p>{photoList.length}</p>}
+      {!photoList 
+      ? <p>Loading...</p> 
+      : photoList.map( post => ( 
+        <Post post={post} key={post.photoId}/>
+      ))
+      }
       {showUpload ? <UploadModal setPhotoList={setPhotoList} setShowUpload={setShowUpload} /> : null}
       <Button
         onClick={() => setShowUpload(true)}
