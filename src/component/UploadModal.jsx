@@ -3,13 +3,13 @@ import { getStorage, ref, uploadBytes } from "firebase/storage"
 import { Modal, Form, Input, Button, Upload } from "antd"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCq45ZNvjsD0EZcSrU-HAlVkcFX06rh5Z0",
-  authDomain: "upload-storage-c8.firebaseapp.com",
-  projectId: "upload-storage-c8",
-  storageBucket: "upload-storage-c8.appspot.com",
-  messagingSenderId: "759960519965",
-  appId: "1:759960519965:web:2d7e89d8b5f93ae0eb8df4"
-}
+  apiKey: "AIzaSyClAwi0Nlg8IjuuFVymvjXLw5Gd5_aEMtc",
+  authDomain: "upload-storage-ed.firebaseapp.com",
+  projectId: "upload-storage-ed",
+  storageBucket: "upload-storage-ed.appspot.com",
+  messagingSenderId: "526576156082",
+  appId: "1:526576156082:web:8857e42f7a29035efdb8ab"
+};
 
 export default function UploadModal({ setShowUpload, setPhotoList }) {
   const handleNewPhoto = (values) => {
@@ -24,12 +24,12 @@ export default function UploadModal({ setShowUpload, setPhotoList }) {
       .then(() => console.log('upload successful'))
       .catch(err => console.error(err))
     // 2. figure out URL for that photo
-    const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-c8.appspot.com/o/photos%2F${filename}?alt=media`
+    const photoUrl = `https://firebasestorage.googleapis.com/v0/b/upload-storage-ed.appspot.com/o/photos%2F${filename}?alt=media`
     // 3. put that URL in to new photo object 
     let newPhotoObj = values
     newPhotoObj.photo = photoUrl
     // 4. send a post request to API
-    fetch('https://express-ts-c8.web.app/photos', {
+    fetch('https://express-ts-ed.web.app/photos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPhotoObj)
