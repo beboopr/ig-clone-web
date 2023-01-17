@@ -1,9 +1,14 @@
-import { Card, Avatar } from 'antd'
+import { Card, Avatar} from 'antd'
+import { HeartTwoTone } from '@ant-design/icons';
+import React from 'react';
 
 export default function Post({ post }) {
   return (
     <Card 
     hoverable
+    actions={[
+        <HeartTwoTone className='feed-hearth' twoToneColor="#eb2f96" />
+    ]}
       style={{ width: 300 }}
       cover={
         <img alt={post.description} src={post.photo} />
